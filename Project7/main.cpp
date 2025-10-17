@@ -44,23 +44,47 @@ Point operator* (Point& b, int a)
 	return res;
 }
 
+ostream& operator << (ostream& os, Point& obj)
+{
+	os << "x: " << obj.GetX() << "y: " << obj.GetY() << endl;
+	return os;
+}
+
+istream& operator >> (istream& is, Point& obj)
+{
+	int temp;
+	is >> temp;
+	obj.SetX(temp);
+	is >> temp;
+	obj.SetY(temp);
+	return is;
+}
+
 int main()
 {
 	Point a(1, 5), b(1, 5);
-	a.Print();
-	Point d = 10 + a;
-	d.Print();
-	--d;
-	d.Print();
+	cout << a << endl;
 
-	Point d1 = 15 - a;
-	d1.Print();
-	Point d2 = 2 * a;
-	d2.Print();
-	Point d3 = 10 / a;
-	d3.Print();
-	Point d4 = a * 2;
-	d4.Print();
+	cin >> a;
+
+	cout << a << endl;
+
+
+
+	//a.Print();
+	//Point d = 10 + a;
+	//d.Print();
+	//--d;
+	//d.Print();
+
+	//Point d1 = 15 - a;
+	//d1.Print();
+	//Point d2 = 2 * a;
+	//d2.Print();
+	//Point d3 = 10 / a;
+	//d3.Print();
+	//Point d4 = a * 2;
+	//d4.Print();
 	/*  Реализовать следующие глобальные перегрузки:
 	Point a1 = 15-a;
 	Point a2 = 2*a;
